@@ -1,10 +1,11 @@
 class OfficesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_office, only: [:show, :edit, :update, :destroy]
 
   # GET /offices
   # GET /offices.json
   def index
-    @offices = Office.all
+    @offices = current_user.offices
   end
 
   # GET /offices/1
@@ -14,7 +15,7 @@ class OfficesController < ApplicationController
 
   # GET /offices/new
   def new
-    @office = Office.new
+    @office = current_user.offices.build
   end
 
   # GET /offices/1/edit
@@ -24,7 +25,7 @@ class OfficesController < ApplicationController
   # POST /offices
   # POST /offices.json
   def create
-    @office = Office.new(office_params)
+    @office = current_user.offices.build(office_params)
 
     respond_to do |format|
       if @office.save
