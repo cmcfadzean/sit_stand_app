@@ -1,0 +1,27 @@
+<h1>Listing desks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @desks.each do |desk| %>
+  <tr>
+    <td><%= desk.name %></td>
+    <td><%= desk.description %></td>
+    <td><%= desk.price %></td>
+    <td><%= link_to 'Show', [desk.office, desk] %></td>
+    <td><%= link_to 'Edit', edit_office_desk_path(desk.office, desk) %></td>
+    <td><%= link_to 'Destroy', [desk.office, desk], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Desk', new_office_desk_path(params[:office_id]) %>

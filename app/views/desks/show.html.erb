@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @desk.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @desk.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @desk.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_office_desk_path(@desk.office, @desk) %> |
+<%= link_to 'Back', office_desks_path(@desk.office) %>
