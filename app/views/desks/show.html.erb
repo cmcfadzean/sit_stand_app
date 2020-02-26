@@ -15,6 +15,10 @@
   <%= @desk.price %>
 </p>
 
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_office_desk_path(@desk.office, @desk) %> |
 <%= link_to 'Back', office_desks_path(@desk.office) %>
