@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # App Strap Added Gems
 gem 'devise'
 gem "components", git: "https://github.com/jensljungblad/components.git"
+gem 'nested_scaffold'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
